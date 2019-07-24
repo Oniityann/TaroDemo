@@ -19,6 +19,8 @@ export default class Index extends Component {
 
   componentWillMount() {
     console.log('第一次渲染之前执行，只执行一次')
+    let { name } = this.$router.params
+    alert(name)
   }
 
   componentDidMount() {
@@ -75,11 +77,21 @@ export default class Index extends Component {
     console.log('页面隐藏时触发')
   }
 
+  // 给子组件传递方法，h5 可以这样传递事件，小程序不可以
+  // 小程序传递的话，需要在属性前面加 on
+  test() {
+    console.log('父组件传递方法给子组件')
+  }
+
   render() {
     let { name, obj } = this.state
     return (
       <View className="index">
-        <Child name={name} obj={obj} />
+        {/* h5 传递 */}
+        {/* <Child name={name} obj={obj} test={this.test} /> */}
+
+        {/* 小程序传递 */}
+        <Child name={name} obj={obj} onTest={this.test} />
       </View>
     )
   }

@@ -18,16 +18,22 @@ class Child extends Component {
     )
   }
 
+  click() {
+    this.props.onTest()
+  }
+
   render() {
     let { name } = this.props
     return (
-      <View>
+      <View onClick={this.click.bind(this)}>
         <Text>我是子节点，{name}</Text>
       </View>
     )
   }
 }
 
+/// props 可以传递任何类型的数据
+// 父组件 Key 为 undefinded 的时候，调用 default properties
 Child.defaultProps = {
   obj: { key: [{ name: 'aaaa' }] }
 }
