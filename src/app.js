@@ -11,7 +11,12 @@ import './app.css'
 
 class App extends Component {
   config = {
-    pages: ['pages/test/test', 'pages/index/index'],
+    pages: [
+      'pages/index/index',
+      'pages/event/event',
+      'pages/dialog/testDialog',
+      'pages/test/test'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
