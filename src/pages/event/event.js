@@ -16,7 +16,7 @@ export default class Event extends Component {
   render() {
     return (
       <View className="index">
-        {/* 只要 JSX 组件传入的参数是函数，参数名就必须以 on 开头 */}
+        {/* 对于小程序，只要 JSX 组件传入的参数是函数，参数名就必须以 on 开头 */}
         <Button onClick={this.testButtonClicked.bind(this, this.state.name)}>
           测试事件
         </Button>
