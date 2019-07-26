@@ -12,8 +12,8 @@ import './app.css'
 class App extends Component {
   config = {
     pages: [
-      'pages/index/index',
       'pages/event/event',
+      'pages/index/index',
       'pages/dialog/testDialog',
       'pages/test/test'
     ],

@@ -24,13 +24,13 @@ const _taroHistory = createHistory({
   mode: "hash",
   basename: "/",
   customRoutes: {},
-  firstPagePath: "/pages/index/index"
+  firstPagePath: "/pages/event/event"
 });
 
 mountApis(_taroHistory);
 class App extends Component {
   config = {
-    pages: ["/pages/index/index", "/pages/event/event", "/pages/dialog/testDialog", "/pages/test/test"],
+    pages: ["/pages/event/event", "/pages/index/index", "/pages/dialog/testDialog", "/pages/test/test"],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -53,12 +53,12 @@ class App extends Component {
   // 请勿修改此函数
   render() {
     return <Router history={_taroHistory} routes={[{
-      path: '/pages/index/index',
-      componentLoader: () => import( /* webpackChunkName: "index_index" */'./pages/index/index'),
-      isIndex: true
-    }, {
       path: '/pages/event/event',
       componentLoader: () => import( /* webpackChunkName: "event_event" */'./pages/event/event'),
+      isIndex: true
+    }, {
+      path: '/pages/index/index',
+      componentLoader: () => import( /* webpackChunkName: "index_index" */'./pages/index/index'),
       isIndex: false
     }, {
       path: '/pages/dialog/testDialog',
